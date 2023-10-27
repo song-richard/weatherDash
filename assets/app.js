@@ -14,7 +14,18 @@ async function weatherApi() {
     console.log(response.status)
     try {
         if (response.ok) {
-            console.log(await response.json())
+            let data = await response.json()
+            let cityName = data["city"]["name"]
+            let currentTemp = data["list"][0]["temp"]
+            let currentHumidity = data["list"][0]["main"]["humidity"]
+            let weatherDescription = data["list"][0]["weather"][0]["description"]
+            let currentWind = data["list"][0]["wind"]["speed"]
+            //Might need to extract this and run a loop to find the date for next days " If 'includes' "
+            let currentDt = (data["list"][0]["dt_txt"])
+
+            console.log(currentWind)
+            console.log(currentHumidity)
+            
         } else {
             console.log(error)
         }
@@ -22,5 +33,5 @@ async function weatherApi() {
         console.log(err)
     }
 }
-weatherApi()
 
+weatherApi()
