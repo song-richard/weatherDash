@@ -12,29 +12,59 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+    <section id="searchBar">
+        <form>
+            <input type="text" id="search-input" placeholder="Enter City">
+            <button id="search-btn" type="button">Search</button>
+        </form>
+    </section>
+
     <section id="todaySection">
         <div id="todayForecast">
-            <div id="todayTemp">Temperature: 60F</div>
+            <div id="todayTemp"></div>
             <div id="todayDescription">Clear Skies</div>
-            <div id="todayCity">Location: El Monte</div>
-            <div id="todayDate">Date: October 21</div>
-        </div>
-        <div id="additionalInformation">
-            <div id="todayWindSpeed">Wind Speed: 420 MPH</div>
-            <div id="todayHumidity">Humidity: 69%</div>
-            <div id="todaySunrise">Sunrise</div>
-            <div id="todaySunset">Sunset</div>
+            <div id="todayCity">Location:</div>
+            <div id="todayDate">Date:</div>
+            <div id="todayWind">Wind Speed:</div>
+            <div id="todayHumidity">Humidity:</div>
         </div>
     </section>
 
-    <section>
-        <div id="nextFiveDaysForecast">
-            <div id="1plusforecast">+1 Day Temp Forecast</div>
-            <div id="2plusforecast">+2 Day Temp Forecast</div>
-            <div id="3plusforecast">+3 Day Temp Forecast</div>
-            <div id="4plusforecast">+4 Day Temp Forecast</div>
-            <div id="5plusforecast">+5 Day Temp Forecast</div>
+    <section id="fiveDaysSection">
+        <div id="forecast-day-1">
+            <div id="forecast-day-1-date">Date:</div>
+            <div id="forecast-day-1-temp">Temp:</div>
+            <div id="forecast-day-1-wind">Wind:</div>
+            <div id="forecast-day-1-humidity">Humidity:</div>
         </div>
+        <div id="forecast-day-2">
+            <div id="forecast-day-2-date">Date:</div>
+            <div id="forecast-day-2-temp">Temp:</div>
+            <div id="forecast-day-2-wind">Wind:</div>
+            <div id="forecast-day-2-humidity">Humidity:</div>
+        </div>
+        <div id="forecast-day-3">
+            <div id="forecast-day-3-date">Date:</div>
+            <div id="forecast-day-3-temp">Temp:</div>
+            <div id="forecast-day-3-wind">Wind:</div>
+            <div id="forecast-day-3-humidity">Humidity:</div>
+        </div>
+        <div id="forecast-day-4">
+            <div id="forecast-day-4-date">Date:</div>
+            <div id="forecast-day-4-temp">Temp:</div>
+            <div id="forecast-day-4-wind">Wind:</div>
+            <div id="forecast-day-4-humidity">Humidity:</div>
+        </div>
+        <div id="forecast-day-5">
+            <div id="forecast-day-5-date">Date:</div>
+            <div id="forecast-day-5-temp">Temp:</div>
+            <div id="forecast-day-5-wind">Wind:</div>
+            <div id="forecast-day-5-humidity">Humidity:</div>
+        </div>
+    </section>
+
+    <section id="weatherHistory">
+        <div>[Insert History Here]</div>
     </section>
 
     <script src="./assets/app.js"></script>

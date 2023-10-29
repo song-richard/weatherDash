@@ -23,3 +23,15 @@ html, body {
       }
   }
   /* --------- */
+
+#forecast-day-1, #forecast-day-2, #forecast-day-3, #forecast-day-4, #forecast-day-5 {
+    border: solid;
+    border-color: red;
+    padding: 5px;
+}
+
+#todaySection, #weatherHistory {
+    border: solid 2px blue;
+    padding: 5px;
+  }
+
