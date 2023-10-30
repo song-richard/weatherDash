@@ -50,20 +50,25 @@ function loadSearchHistory() {
     for (let city of cities) {
         let newLI = document.createElement('li');
         newLI.textContent = city;
-        weatherHistoryUL.appendChild(newLI)
+        newLI.addEventListener('click', function() {
+            // Retrieve the city name from the clicked history item
+            let selectedCity = city;
+            // Update the search input with the selected city
+            searchInput.value = selectedCity;
+            inputtedCity = selectedCity;
+            weatherApi();
+        });
+        weatherHistoryUL.appendChild(newLI);
     }
 }
 
 //Loads Search History Upon Startup
 window.addEventListener('load', loadSearchHistory);
 
-
 //Search button will save the user's inputs (into a list) into the local storage and will retrieve it into the 'History'
 searchButton.addEventListener('click', function() {
     inputtedCity = searchInput.value;
-
     cities.push(inputtedCity)
-
     localStorage.setItem('cities', JSON.stringify(cities))
 
     let newLI = document.createElement('li')
