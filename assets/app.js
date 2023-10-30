@@ -15,10 +15,13 @@ let currentHumidityDiv = document.querySelector('#todayHumidity')
 let searchInput = document.querySelector('#search-input')
 let searchButton = document.querySelector('#search-btn')
 
+let weatherHistoryUL = document.querySelector('#history-list')
+
 //Convert City Name to Lat/Long
 let inputtedCity = ""
 let findLatLongUrl = ""
 
+//After converting the user's inputted city to lat/long, it will overwrite the lat/long variables at the top of the page
 async function latLongApi() {
     const response = await fetch(findLatLongUrl)
     try {
@@ -39,17 +42,45 @@ async function latLongApi() {
     }
 }
 
+//Retrieves all data with the key 'cities' in the local storage and parases them into an array
+let cities = JSON.parse(localStorage.getItem('cities')) || []
+
+//Loads Search History | Basically re-creating the list again from the local storage
+function loadSearchHistory() {
+    for (let city of cities) {
+        let newLI = document.createElement('li');
+        newLI.textContent = city;
+        weatherHistoryUL.appendChild(newLI)
+    }
+}
+
+//Loads Search History Upon Startup
+window.addEventListener('load', loadSearchHistory);
+
+
+//Search button will save the user's inputs (into a list) into the local storage and will retrieve it into the 'History'
 searchButton.addEventListener('click', function() {
     inputtedCity = searchInput.value;
+
+    cities.push(inputtedCity)
+
+    localStorage.setItem('cities', JSON.stringify(cities))
+
+    let newLI = document.createElement('li')
+    newLI.textContent = inputtedCity
+    weatherHistoryUL.appendChild(newLI)
+
+    //Added location.protocol 'if statement' due to GitHub pages not propeerly fetching without the correct protocol
     if (location.protocol === 'http:') {
         findLatLongUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${inputtedCity}&appid=${weatherAPIKey}`
     } else {
         findLatLongUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${inputtedCity}&appid=${weatherAPIKey}`
     }
+    //Gets the user's inputted CITY and outputs the LATITUDE/LONGITUDE
     latLongApi();
 })
 
-// Get Weather Data
+//Gets weather data with the converted lat/long from latLongApi
 async function weatherApi() {
     if (location.protocol === 'http') {
         baseUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherAPIKey}&units=imperial`

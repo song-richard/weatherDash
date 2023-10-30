@@ -5,7 +5,7 @@ html, body {
   
   /* Background color gradient effect */
   body {
-      background: linear-gradient(-45deg, #eb8364, #ac5f28, #dd871f, #844403);
+      background: linear-gradient(-45deg, #4f4d50, #3e3d3e, #8d838e, #494749);
       background-size: 400% 400%;
       animation: gradient 15s ease infinite;
       display: flex;
