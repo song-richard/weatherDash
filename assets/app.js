@@ -41,7 +41,7 @@ async function latLongApi() {
 
 searchButton.addEventListener('click', function() {
     inputtedCity = searchInput.value;
-    findLatLongUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${inputtedCity}&appid=${weatherAPIKey}`
+    findLatLongUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${inputtedCity}&appid=${weatherAPIKey}`
     latLongApi();
 })
 
