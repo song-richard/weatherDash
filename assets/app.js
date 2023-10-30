@@ -41,13 +41,21 @@ async function latLongApi() {
 
 searchButton.addEventListener('click', function() {
     inputtedCity = searchInput.value;
-    findLatLongUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${inputtedCity}&appid=${weatherAPIKey}`
+    if (location.protocol === 'http:') {
+        findLatLongUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${inputtedCity}&appid=${weatherAPIKey}`
+    } else {
+        findLatLongUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${inputtedCity}&appid=${weatherAPIKey}`
+    }
     latLongApi();
 })
 
 // Get Weather Data
 async function weatherApi() {
-    const baseUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherAPIKey}&units=imperial`
+    if (location.protocol === 'http') {
+        baseUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherAPIKey}&units=imperial`
+    } else {
+        baseUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherAPIKey}&units=imperial`
+    }
     const response = await fetch(baseUrl)
     console.log(response.status)
     try {
