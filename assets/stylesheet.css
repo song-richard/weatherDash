@@ -5,10 +5,11 @@ html, body {
   
   /* Background color gradient effect */
   body {
-      background: linear-gradient(-45deg, #5a504d, #646d75, #31383a, #787577);
+      background: linear-gradient(-45deg, #eb8364, #ac5f28, #dd871f, #844403);
       background-size: 400% 400%;
       animation: gradient 15s ease infinite;
       display: flex;
+      color: whitesmoke;
   }
   
   @keyframes gradient {
