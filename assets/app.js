@@ -1,4 +1,3 @@
-
 let weatherAPIKey = "8a9b986776d2999e3580193c86a5744c"
 let lat = "34.068623"
 let lon = "-118.027565"
