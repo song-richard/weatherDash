@@ -26,7 +26,6 @@ async function latLongApi() {
     try {
         if (response.ok) {
             let data = await response.json();
-            console.log(data)
             let fetchedLat = data[0]["lat"]
             let fetchedLon = data[0]["lon"]
             lat = fetchedLat
@@ -92,7 +91,6 @@ async function weatherApi() {
         baseUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherAPIKey}&units=imperial`
     }
     const response = await fetch(baseUrl)
-    console.log(response.status)
     try {
         if (response.ok) {
             //Query Selectors for CURRENT DAY
@@ -102,7 +100,6 @@ async function weatherApi() {
             let currentHumidity = data["list"][0]["main"]["humidity"]
             let currentDescription = data["list"][0]["weather"][0]["description"]
             let currentWind = data["list"][0]["wind"]["speed"]
-            //Might need to extract this and run a loop to find the date for next days " If 'includes' "
             let currentDt = (data["list"][0]["dt_txt"])
             currentDateDiv.textContent = `Date/Time: ${currentDt}`;
             currentCityDiv.textContent = `City: ${currentCity}`;
