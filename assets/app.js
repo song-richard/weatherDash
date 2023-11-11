@@ -103,10 +103,10 @@ async function weatherApi() {
             let currentDt = (data["list"][0]["dt_txt"])
             currentDateDiv.textContent = `Date/Time: ${currentDt}`;
             currentCityDiv.textContent = `City: ${currentCity}`;
-            currentTempDiv.textContent = `Temperature: ${currentTemp}`;
+            currentTempDiv.textContent = `Temperature: ${currentTemp} F`;
             currentDescriptionDiv.textContent = `Description: ${currentDescription}`;
             currentWindDiv.textContent = `Wind: ${currentWind}`
-            currentHumidityDiv.textContent = `Humidity: ${currentHumidity}`
+            currentHumidityDiv.textContent = `Humidity: ${currentHumidity}%`
 
             //Day 1 Forecast
             let dayOneForecastDateDiv = document.querySelector('#forecast-day-1-date');
@@ -116,7 +116,7 @@ async function weatherApi() {
             dayOneForecastDateDiv.textContent = `Date: ${data["list"][7]["dt_txt"]}`
             dayOneForecastTempDiv.textContent = `Temperature: ${data["list"][7]["main"]["temp"]} F`
             dayOneForecastWindDiv.textContent = `Wind: ${data["list"][7]["wind"]["speed"]} MPH`
-            dayOneForecastHumidityDiv.textContent = `Humidity: ${data["list"][0]["main"]["humidity"]}`
+            dayOneForecastHumidityDiv.textContent = `Humidity: ${data["list"][0]["main"]["humidity"]}%`
 
             //Day 2 Forecast
             let dayTwoForecastDateDiv = document.querySelector('#forecast-day-2-date');
@@ -126,7 +126,7 @@ async function weatherApi() {
             dayTwoForecastDateDiv.textContent = `Date: ${data["list"][15]["dt_txt"]}`
             dayTwoForecastTempDiv.textContent = `Temperature: ${data["list"][15]["main"]["temp"]} F`
             dayTwoForecastWindDiv.textContent = `Wind: ${data["list"][15]["wind"]["speed"]} MPH`
-            dayTwoForecastHumidityDiv.textContent = `Humidity: ${data["list"][15]["main"]["humidity"]}`
+            dayTwoForecastHumidityDiv.textContent = `Humidity: ${data["list"][15]["main"]["humidity"]}%`
 
             //Day 3 Forecast
             let dayThreeForecastDateDiv = document.querySelector('#forecast-day-3-date');
@@ -136,7 +136,7 @@ async function weatherApi() {
             dayThreeForecastDateDiv.textContent = `Date: ${data["list"][23]["dt_txt"]}`
             dayThreeForecastTempDiv.textContent = `Temperature: ${data["list"][23]["main"]["temp"]} F`
             dayThreeForecastWindDiv.textContent = `Wind: ${data["list"][23]["wind"]["speed"]} MPH`
-            dayThreeForecastHumidityDiv.textContent = `Humidity: ${data["list"][23]["main"]["humidity"]}`
+            dayThreeForecastHumidityDiv.textContent = `Humidity: ${data["list"][23]["main"]["humidity"]}%`
 
             //Day 4 Forecast
             let dayFourForecastDateDiv = document.querySelector('#forecast-day-4-date');
@@ -146,7 +146,7 @@ async function weatherApi() {
             dayFourForecastDateDiv.textContent = `Date: ${data["list"][31]["dt_txt"]}`
             dayFourForecastTempDiv.textContent = `Temperature: ${data["list"][31]["main"]["temp"]} F`
             dayFourForecastWindDiv.textContent = `Wind: ${data["list"][31]["wind"]["speed"]} MPH`
-            dayFourForecastHumidityDiv.textContent = `Humidity: ${data["list"][31]["main"]["humidity"]}`
+            dayFourForecastHumidityDiv.textContent = `Humidity: ${data["list"][31]["main"]["humidity"]}%`
 
             // Day 5F orecast
             let dayFiveForecastDateDiv = document.querySelector('#forecast-day-5-date');
@@ -156,7 +156,7 @@ async function weatherApi() {
             dayFiveForecastDateDiv.textContent = `Date: ${data["list"][39]["dt_txt"]}`
             dayFiveForecastTempDiv.textContent = `Temperature: ${data["list"][39]["main"]["temp"]} F`
             dayFiveForecastWindDiv.textContent = `Wind: ${data["list"][39]["wind"]["speed"]} MPH`
-            dayFiveForecastHumidityDiv.textContent = `Humidity: ${data["list"][39]["main"]["humidity"]}`
+            dayFiveForecastHumidityDiv.textContent = `Humidity: ${data["list"][39]["main"]["humidity"]}%`
         } 
     } catch(err) {
         console.log(err)
