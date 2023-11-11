@@ -2,37 +2,5 @@ html, body {
     width: 100%;
     height:100%;
   }
-  
-  /* Background color gradient effect */
-  body {
-      background: linear-gradient(-45deg, #4f4d50, #3e3d3e, #8d838e, #494749);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
-      display: flex;
-      color: whitesmoke;
-  }
-  
-  @keyframes gradient {
-      0% {
-          background-position: 0% 50%;
-      }
-      50% {
-          background-position: 100% 50%;
-      }
-      100% {
-          background-position: 0% 50%;
-      }
-  }
-  /* --------- */
 
-#forecast-day-1, #forecast-day-2, #forecast-day-3, #forecast-day-4, #forecast-day-5 {
-    border: solid;
-    border-color: red;
-    padding: 5px;
-}
-
-#todaySection, #weatherHistory {
-    border: solid 2px blue;
-    padding: 5px;
-  }
 
