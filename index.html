@@ -4,62 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/stylesheet.css">
 </head>
-<body class="bg-gray-100 text-black">
-    <section id="searchBar" class="text-4xl font-bold underline p-6 text-center bg-blue-500 text-black">
-        <form class="mt-4">
-            <input type="text" id="search-input" class="border rounded p-4" placeholder="Enter City">
-            <button id="search-btn" type="button" class="bg-white text-blue-500 px-6 py-4 ml-2 rounded-full shadow-md">Search</button>
+<body class="bg-gradient-to-b from-gray-800 to-gray-900 text-white font-sans">
+    <section id="searchBar" class="text-3xl font-bold py-4 text-center bg-gradient-to-r from-blue-500 to-purple-500">
+        Weather Dashboard
+        <form class="mt-2 flex flex-col md:flex-row items-center justify-center">
+            <input type="text" id="search-input" class="border rounded p-2 w-full md:w-60 bg-gray-800 text-white focus:outline-none focus:ring focus:border-blue-300 mb-2 md:mb-0 md:mr-2" placeholder="City">
+            <button id="search-btn" type="button" class="bg-blue-500 text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Search</button>
         </form>
     </section>
-    <section id="todaySection" class="card p-6 mt-6 bg-white shadow-md rounded-md">
+    <section id="todaySection" class="card p-8 mt-8 bg-gray-800 text-gray-300">
         <div id="todayForecast">
-            <div id="todayForecast">
-                <div id="todayTemp" class="text-3xl font-bold mb-4">Temperature:</div>
-                <div id="todayDescription" class="mb-4">Clear Skies</div>
-                <div id="todayCity" class="mb-2">Location:</div>
-                <div id="todayDate" class="mb-2">Date:</div>
-                <div id="todayWind" class="mb-2">Wind Speed:</div>
-                <div id="todayHumidity" class="mb-2">Humidity:</div>
+            <div id="todayTemp" class="text-4xl font-bold mb-4">Temperature:</div>
+            <div id="todayDescription" class="mb-4">Clear Skies</div>
+            <div id="todayCity" class="mb-4">Location:</div>
+            <div id="todayDate" class="mb-4">Date:</div>
+            <div id="todayWind" class="mb-4">Wind Speed:</div>
+            <div id="todayHumidity" class="mb-4">Humidity:</div>
         </div>
     </section>
-    <section id="fiveDaysSection" class="mt-6 flex flex-wrap justify-around">
-        <div id="forecast-day-1" class="card p-6 mb-6 bg-white shadow-md rounded-md w-1/3">
+    <section id="fiveDaysSection" class="mt-8 flex flex-wrap justify-around">
+        <!-- Day 1 Forecast -->
+        <div id="forecast-day-1" class="card p-8 mb-8 bg-gray-800 text-gray-300 w-full md:w-1/2 lg:w-1/3">
             <div id="forecast-day-1-date" class="mb-4">Date:</div>
             <div id="forecast-day-1-temp" class="mb-4">Temp:</div>
             <div id="forecast-day-1-wind" class="mb-4">Wind:</div>
             <div id="forecast-day-1-humidity" class="mb-4">Humidity:</div>
         </div>
-        <div id="forecast-day-2" class="card p-6 mb-6 bg-white shadow-md rounded-md w-1/3">
+        <!-- Day 2 Forecast -->
+        <div id="forecast-day-2" class="card p-8 mb-8 bg-gray-800 text-gray-300 w-full md:w-1/2 lg:w-1/3">
             <div id="forecast-day-2-date" class="mb-4">Date:</div>
             <div id="forecast-day-2-temp" class="mb-4">Temp:</div>
             <div id="forecast-day-2-wind" class="mb-4">Wind:</div>
             <div id="forecast-day-2-humidity" class="mb-4">Humidity:</div>
         </div>
-        <div id="forecast-day-3" class="card p-6 mb-6 bg-white shadow-md rounded-md w-1/3">
+        <!-- Day 3 Forecast -->
+        <div id="forecast-day-3" class="card p-8 mb-8 bg-gray-800 text-gray-300 w-full md:w-1/2 lg:w-1/3">
             <div id="forecast-day-3-date" class="mb-4">Date:</div>
             <div id="forecast-day-3-temp" class="mb-4">Temp:</div>
             <div id="forecast-day-3-wind" class="mb-4">Wind:</div>
             <div id="forecast-day-3-humidity" class="mb-4">Humidity:</div>
         </div>
-        <div id="forecast-day-4" class="card p-6 mb-6 bg-white shadow-md rounded-md w-1/3">
+        <!-- Day 4 Forecast -->
+        <div id="forecast-day-4" class="card p-8 mb-8 bg-gray-800 text-gray-300 w-full md:w-1/2 lg:w-1/3">
             <div id="forecast-day-4-date" class="mb-4">Date:</div>
             <div id="forecast-day-4-temp" class="mb-4">Temp:</div>
             <div id="forecast-day-4-wind" class="mb-4">Wind:</div>
             <div id="forecast-day-4-humidity" class="mb-4">Humidity:</div>
         </div>
-        <div id="forecast-day-5" class="card p-6 mb-6 bg-white shadow-md rounded-md w-1/3">
+        <!-- Day 5 Forecast -->
+        <div id="forecast-day-5" class="card p-8 mb-8 bg-gray-800 text-gray-300 w-full md:w-1/2 lg:w-1/3">
             <div id="forecast-day-5-date" class="mb-4">Date:</div>
             <div id="forecast-day-5-temp" class="mb-4">Temp:</div>
             <div id="forecast-day-5-wind" class="mb-4">Wind:</div>
             <div id="forecast-day-5-humidity" class="mb-4">Humidity:</div>
         </div>
     </section>
-    <section id="weatherHistory" class="mt-6 p-6 bg-white shadow-md rounded-md">
-        <div class="text-2xl mb-4">History:</div>
-        <ul id="history-list" class="list-disc pl-6"></ul>
+    <section id="weatherHistory" class="mt-8 p-8 bg-gray-800 text-gray-300">
+        <div class="text-4xl mb-6">History:</div>
+        <ul id="history-list" class="list-disc pl-8"></ul>
     </section>
     <script src="./assets/app.js"></script>
 </body>
