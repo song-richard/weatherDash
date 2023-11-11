@@ -5,7 +5,7 @@ The following application provides the end-user with weather data from the curre
 ## Usage
 
 Screenshot:
-![JavaScript Quiz](./assets/weatherscreenshot.png)
+![weatherDash](./assets/images/weatherDash%20screenshot.png)
 
 ## Credits
 
