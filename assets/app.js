@@ -105,7 +105,7 @@ async function weatherApi() {
             currentCityDiv.textContent = `City: ${currentCity}`;
             currentTempDiv.textContent = `Temperature: ${currentTemp} F`;
             currentDescriptionDiv.textContent = `Description: ${currentDescription}`;
-            currentWindDiv.textContent = `Wind: ${currentWind}`
+            currentWindDiv.textContent = `Wind: ${currentWind} MPH`
             currentHumidityDiv.textContent = `Humidity: ${currentHumidity}%`
 
             //Day 1 Forecast
