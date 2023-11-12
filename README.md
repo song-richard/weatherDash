@@ -17,4 +17,4 @@ https://github.com/song-richard/weatherDashboard
 
 ## Link to Deployed Application
 
-https://song-richard.github.io/weatherDashboard/
+https://song-richard.github.io/weatherDash/
